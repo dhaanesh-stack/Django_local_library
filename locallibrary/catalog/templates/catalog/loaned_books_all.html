@@ -4,7 +4,7 @@
   <h2>All Borrowed Books</h2>
   <ul>
     {% for bookinstance in object_list %}
-      <li>{{ bookinstance.book.title }} – Borrower: {{ bookinstance.borrower }}</li>
+      <li class="{% if bookinstance.is_overdue %}text-danger{% endif %}"><a href="{% url 'book-detail' bookinstance.book.pk %}">{{ bookinstance.book.title }}</a> – Borrower: {{ bookinstance.borrower }}{% if perms.catalog.can_mark_returned %}- <a href="{% url 'renew-book-librarian' bookinstance.id %}">Renew</a>{% endif %}</li>
     {% empty %}
       <li>No books are currently borrowed.</li>
     {% endfor %}
