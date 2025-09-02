@@ -26,7 +26,7 @@ load_dotenv(env_path)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-&psk#na5l=p3q8_a+-$4w1f^lt3lx1c@d*p4x$ymm_rn7pwb87')
-CSRF_TRUSTED_ORIGINS = ['https://Dhaanesh.pythonanywhere.com']
+CSRF_TRUSTED_ORIGINS = ['https://dhaaneshtp.pythonanywhere.com']
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
